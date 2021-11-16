@@ -1,0 +1,456 @@
+//Benjamin Wutz
+//Text Based Game
+//2021-8-9
+
+import java.util.*;
+public class FinalExamPROGRAM {
+    public static void main (String[] args) {
+        
+        String[] item = new String[7];
+        System.out.println("Welcome to Survival the text based game.");
+        System.out.println();
+        System.out.println("Enter your name to begin.");
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
+        System.out.println();
+        System.out.println("Hello " + name + ", enter a number to choose your starting item.");
+        System.out.println();
+        System.out.println("1. Flashlight");
+        System.out.println("2. Lock Pick");
+        System.out.println();
+        int startingItem = scanner.nextInt();
+        System.out.println();
+        
+        while (startingItem < 1){
+            
+            System.out.println("Please make a chose of either 1 or 2 to continue.");
+            startingItem = scanner.nextInt();
+            System.out.println();
+        }
+        
+        while (startingItem > 2){
+            
+            System.out.println("Please make a chose of either 1 or 2 to continue.");
+            startingItem = scanner.nextInt();
+            System.out.println();
+        }
+        
+        if (startingItem == 1){
+            
+            System.out.println("You have chosen the Flashlight.");
+            item[0] = "Flashlight";
+            System.out.println();
+            
+        }else if (startingItem == 2){
+            
+            System.out.println("You have chosen the Lock Pick.");
+            item[0] = "Lock Pick";
+            System.out.println();
+            
+        }
+        
+        System.out.println("You wake up in the middle of the woods.");
+        System.out.println("All that you have with you is your starting item.");
+        System.out.println("The sun has just risen use your time wisely to survive.");
+        System.out.println();
+        System.out.println("What is your first objective?");
+        System.out.println();
+        System.out.println("1. Find Shelter");
+        System.out.println("2. Explore surroundings");
+        System.out.println();
+        int obj0 = scanner.nextInt();
+        
+        while (obj0 < 1){
+            
+            System.out.println("Please make a chose of either 1 or 2 to continue.");
+            startingItem = scanner.nextInt();
+            System.out.println();
+        }
+        
+        while (obj0 > 2){
+            
+            System.out.println("Please make a chose of either 1 or 2 to continue.");
+            startingItem = scanner.nextInt();
+            System.out.println();
+        }
+        
+        if (obj0 == 1){
+            
+            if (item[0] == "Flashlight"){
+                
+                System.out.println();
+                
+                System.out.println("You have found a cave. Use your flashlight to take a closer look.");
+                System.out.println("The cave is filled with old bones....");
+                System.out.println("You find a Lighter and a Spear.");
+                System.out.println("You hear something coming from the depth of the cave and run out into the woods.");
+                
+                item[3] = "Lighter";
+                item[4] = "Spear";
+                
+                
+            }else{
+                
+                System.out.println();
+                System.out.println("You have found a cave but it is too dark to see.");
+                
+            }
+            
+        }else if (obj0 == 2){
+            
+            System.out.println();
+            System.out.println("You search the surrounding area and find a river.");
+            System.out.println("You see flint on the ground near the river and use it to start a fire.");
+            System.out.println("You now have a Torch and Flint at your dispole.");
+            
+            item[1] = "Torch";
+            item[2] = "Flint";
+            
+        }
+        
+        System.out.println();
+        System.out.println("The sun is now at the highest point in the sky.");
+        System.out.println("You are getting hungry. You should find shelter before it gets dark.");
+        System.out.println();
+        System.out.println("Make a choice from the list to continue.");
+        System.out.println();
+        System.out.println("1. Search for food.");
+        System.out.println("2. Search for shelter.");
+        System.out.println();
+        int obj1 = scanner.nextInt();
+        System.out.println();
+        
+        while (obj1 < 1){
+            
+            System.out.println("Please make a choice of either 1 or 2 to continue.");
+            startingItem = scanner.nextInt();
+            System.out.println();
+        }
+        
+        while (obj1 > 2){
+            
+            System.out.println("Please make a choice of either 1 or 2 to continue.");
+            startingItem = scanner.nextInt();
+            System.out.println();
+        }
+        
+        
+        
+        if (obj1 == 1){
+            
+            if (obj0 == 1){
+                
+                
+                System.out.println("You search the area near the cave and find some berrie bushes.");
+                System.out.println("Would you like to eat the berries?");
+                System.out.println();
+                System.out.println("Enter 1 for YES and 2 for NO.");
+                System.out.println();
+                int reply0 = scanner.nextInt();
+                System.out.println();
+               
+                while (reply0 < 1){
+            
+                    System.out.println("Please make a choice of either 1 or 2 to continue.");
+                    startingItem = scanner.nextInt();
+                    System.out.println();
+                }
+        
+                while (reply0 > 2){
+            
+                    System.out.println("Please make a choice of either 1 or 2 to continue.");
+                    startingItem = scanner.nextInt();
+                    System.out.println();
+                }
+               
+                if (reply0 == 1){
+               
+                    System.out.println("The berries were poisonous.");
+                    System.out.println("You are now very sick and need to rest.");
+                    System.out.println();
+                    System.out.println("Game Over you died from eating the berries.");
+                    System.out.println();
+               
+                }else if(reply0 == 2){
+                    
+                    System.out.println("You leave the berries.");
+                    System.out.println("You continue your search and find a river.");
+                    System.out.println("You notice fish in the river.");
+                    System.out.println("Using the spear you found, you catch some.");
+                    System.out.println();
+                    System.out.println("There is flint near the river you use it to start a fire.");
+                    System.out.println("You cook the fish and eat. You are no longer hungry.");
+                    System.out.println();
+                    System.out.println("You now have a Torch and Flint at your dispole.");
+                    
+                    item[1] = "Torch";
+                    item[2] = "Flint";
+                }
+               
+            }else if (obj0 == 2){
+                
+            System.out.println();
+                
+            System.out.println("You look in the water and notice some fish if you had a spear you could catch them.");
+            System.out.println("You continue your search for food and find some berries.");
+            System.out.println("Would you like to eat the berries?");
+            System.out.println();
+            System.out.println("Enter 1 for YES and 2 for NO.");
+            System.out.println();
+            int reply0 = scanner.nextInt();
+            System.out.println();
+                
+            while (reply0 < 1){
+            
+                System.out.println("Please make a choice of either 1 or 2 to continue.");
+                reply0 = scanner.nextInt();
+                System.out.println();
+            }
+        
+            while (reply0 > 2){
+            
+                System.out.println("Please make a choice of either 1 or 2 to continue.");
+                reply0 = scanner.nextInt();
+                System.out.println();
+            }
+               
+            if (reply0 == 1){
+                   
+                System.out.println("The berries were poisonous.");
+                System.out.println("You are now very sick and need to rest.");
+                System.out.println();
+                System.out.println("Game Over you died from eating the berries.");
+                System.out.println();
+               
+            }else if(reply0 == 2){
+                    
+                System.out.println("You leave the berries.");
+                System.out.println("You continue your search.");
+                System.out.println("You have found a cave. Use your torch to take a closer look.");
+                System.out.println("The cave is filled with old bones....");
+                System.out.println("You find a Lighter and a Spear.");
+                System.out.println("You hear something coming from the depth of the cave and run out into the woods.");
+                System.out.println();
+                    
+                    item[3] = "Lighter";
+                    item[4] = "Spear";
+            }
+            
+            }
+            
+        }else if (obj1 == 2){
+            
+           // if (obj0 == 1){
+                
+                System.out.println("You wonder throught the woods in search of shelter.");  
+                System.out.println("You see smoke in the distance.");
+                System.out.println("As you get closer you can see an old house.");
+                
+                if (item[0] == "Lock Pick"){
+                    
+                    System.out.println();
+                    System.out.println("You unlock the door using your lock pick.");
+                    System.out.println("Inside you find a HAM radio.");
+                    System.out.println("You try to call for help but the signal isn't strong enough.");
+                    System.out.println("If you get to highground it should work.");
+                    System.out.println();
+                    System.out.println("There was also some canned beans you eat them. You are no longer hungery.");
+                    System.out.println("When leaving you see a map that shows a river not far from where you woke up.");
+                    item[5] = "HAM radio";
+                    
+                }else {
+                    
+                    System.out.println("You go up to the house but the door is locked.");
+                    System.out.println("You look in the window and see some cans of beans.");
+                    
+                    System.out.println();
+                    System.out.println("Would you like to break the window?");
+                    System.out.println();
+                    System.out.println("Enter 1 for YES and 2 for NO.");
+                    System.out.println();
+                    int reply1 = scanner.nextInt();
+                    System.out.println();
+                    
+                
+                    while (reply1 < 1){
+            
+                        System.out.println("Please make a choice of either 1 or 2 to continue.");
+                        reply1 = scanner.nextInt();
+                        System.out.println();
+                    }
+        
+                    while (reply1 > 2){
+            
+                        System.out.println("Please make a choice of either 1 or 2 to continue.");
+                        reply1 = scanner.nextInt();
+                        System.out.println();                    
+                        
+                    }
+                    
+                    if (reply1 == 1){
+                        
+                        if (item[4] == "Spear"){
+                    
+                            System.out.println("Using the spear you break the window.");
+                            System.out.println("You climb through the window.");
+                            System.out.println("Inside you find a HAM radio.");
+                            System.out.println("You try to call for help but the signal isn't strong enough.");
+                            System.out.println("If you get to highground it should work");
+                            System.out.println("There was also some canned beans you eat them. You are no longer hungery.");
+                            item[5] = "HAM radio";
+                            System.out.println();
+                            System.out.println("You hear a gun shot from behind you.");
+                            System.out.println("Game Over you died from a gunshot wound.");
+                            
+                        }else{
+                            
+                            System.out.println("Using your fist you punch the window.");
+                            System.out.println("The window breaks.");
+                            System.out.println("You look down and notice a large cut from the glass in your arm.");
+                            System.out.println("You hurry inside to try to find a first aid kit.");
+                            System.out.println("Game Over you died from blood lose.");
+                        }
+                        
+                       System.out.println();
+                    }
+                    
+                    if (reply1 == 2){
+                        
+                        System.out.println("You yell out is anyone home?");
+                        System.out.println("An old man yell's back who goes there.");
+                        System.out.println("You tell him you are lost and hungry.");
+                        System.out.println();
+                        System.out.println("He tells you that he has lost his dog and he would help you out if you can return him.");
+                        System.out.println("The dog's name is Lucky.");
+                        System.out.println("He says Lucky loves a good bone.");
+                    }
+                }
+          //  }
+            
+            
+        }
+        System.out.println();
+        System.out.println("It is getting late. The sun will set soon.");
+        System.out.println("You should find shelter. Who knows what is in these woods at night.");
+        System.out.println();
+        System.out.println("Make a choice from the list to continue.");
+        System.out.println();
+                
+        System.out.println("1. Spend night at river.");
+        System.out.println("2. Spend night at cave.");
+        System.out.println();
+        int obj2 = scanner.nextInt();
+        System.out.println();
+        
+        
+        while (obj2 < 1){
+            
+            System.out.println("Please make a choice of either 1 or 2 to continue.");
+            obj2 = scanner.nextInt();
+            System.out.println();
+        }
+        
+        while (obj2 > 2){
+            
+            System.out.println("Please make a choice of either 1 or 2 to continue.");
+            obj2 = scanner.nextInt();
+            System.out.println();                    
+        }
+            
+        if (obj2 == 1){
+            
+            System.out.println("You head down to the river.");
+            System.out.println("After checking the area you decided to sleep under a tree....");
+            System.out.println();
+            System.out.println("You wake up in the middle of the night because you were unable to breath.");
+            System.out.println("Opening your eyes to see a giant python has wrapped it's self around you.");
+            System.out.println();
+            System.out.println("Game Over you were dinner for a hungry python.");
+            System.out.println();
+        }
+        
+        if (obj2 == 2){
+            
+            System.out.println("You head to the cave to find shelter.");
+            
+            if (obj0 != 1){
+                
+                if(obj1 != 1){
+                    
+                    System.out.println("You find a lighter near the enterance of the cave.");
+                    System.out.println("Using part of your shirt you make a torch.");
+                    System.out.println("Once inside you notice bones on the ground....");
+                    System.out.println();
+                    System.out.println("You hear a noise coming from the back of the cave.");
+                    System.out.println("Continuing forward you catch a glance of the creature....");
+                    System.out.println("You hear a bark. It's a dog!");
+                    System.out.println();
+                    System.out.println("He runs up to you with a bone in his mouth.");
+                    System.out.println("You check his tags and on them it says LUCKY.");
+                    
+                }
+            }else {
+                
+                System.out.println("Worried about what might be waiting for you inside.");
+                System.out.println("It starts downpouring as you arrive to the entrence so you go inside.");
+                System.out.println("You make your way inside and see the bones laying there....");
+                System.out.println();
+                System.out.println("You hear the noise coming from the back of the cave again....");
+                System.out.println("Continuing forward you catch a glance of the creature....");
+                System.out.println();
+                System.out.println("You hear a bark. It's a dog!");
+                System.out.println();
+                System.out.println("He runs up to you with a bone in his mouth.");
+                System.out.println("You check his tags and on them it says LUCKY.");
+            }
+        } 
+        if (obj1 == 2){
+            
+            if (item[5] == "HAM Radio"){
+                
+                System.out.println();
+                System.out.println("After surving the night in the cave with Lucky you have two options.");
+                System.out.println();
+                System.out.println("1. Return Lucky to owner.");
+                System.out.println("2. Find highground and call for help on the radio.");
+                System.out.println();
+                int obj3 = scanner.nextInt();
+                System.out.println();
+                
+                while (obj3 < 1){
+            
+                    System.out.println("Please make a choice of either 1 or 2 to continue.");
+                    obj3 = scanner.nextInt();
+                    System.out.println();
+                }
+        
+                while (obj3 > 2){
+            
+                    System.out.println("Please make a choice of either 1 or 2 to continue.");
+                    obj3 = scanner.nextInt();
+                    System.out.println();                    
+                }
+                
+                if (obj3 == 1){
+                    
+                     System.out.println("Lucky leads the way back to the owners house.");
+                     System.out.println("It's quite familar.");
+                     System.out.println("The old man thanks you for returning his dog.");
+                     System.out.println();
+                     System.out.println("He offers to take you into town to help you find your way home.");
+                     System.out.println();
+                     System.out.println("YOU WIN! You Surivied the Night!");
+                }
+            }
+        }
+            System.out.println();
+            System.out.println("After surving the night in the cave with Lucky.");
+            System.out.println("You follow him home in the morning.");
+            System.out.println("Appon arival you are greated by an old man.");
+            System.out.println("He thanks you for returning his dog.");
+            System.out.println();
+            System.out.println("He offers you a ride into town.");
+            System.out.println();
+            System.out.println("YOU WIN! You Surivied the Night!");
+        
+    }
